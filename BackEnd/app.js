@@ -6,6 +6,8 @@ const migArticle = require('./migrations/articles.js')
 const migComment = require('./migrations/comments.js')
 const seedArticle = require('./seeders/articles.js')
 const seedComment = require('./seeders/comments.js')
+const articleRoutes = require('./routes/articleRoutes.js')
+const commentRoutes = require('./routes/commentRoutes.js')
 
 app.use(express.json());
 
