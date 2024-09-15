@@ -26,8 +26,8 @@ export default {
   },
   created() {
     const articleId = this.$route.params.id;
-    this.article = this.$store.getters.getArticleById(articleId);
     this.$store.dispatch('fetchComments', articleId);
+    this.article = this.$store.getters.getArticleById(articleId);
   },
   computed: {
     comments() {
@@ -38,6 +38,8 @@ export default {
     editArticle() {
     },
     deleteArticle() {
+      this.$store.dispatch('deleteArticle', this.article.id);
+      this.$router.push('/');
     }
   }
 };

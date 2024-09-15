@@ -18,7 +18,11 @@ export default {
   },
   methods: {
     submitArticle() {
-      this.$store.dispatch('addArticle', this.article);
+      if (this.article.id) {
+        this.$store.dispatch('editArticle', this.article);
+      } else {
+        this.$store.dispatch('addArticle', this.article);
+      }
     }
   }
 };
